@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bhavesh Barmashe | AI/ML Engineer & Researcher</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Portfolio of Bhavesh Barmashe, AI/ML Engineer, researcher, and author of a Nature Q1 Scientific Reports publication. Specializing in Federated Learning, Multi-Agent Systems, and Computer Vision.">
+  <meta name="keywords" content="Bhavesh Barmashe, AI Engineer, Machine Learning, Deep Learning, Federated Learning, LangGraph, PyTorch, Portfolio">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <header style="position: fixed; top: 0; width: 100%; z-index: 100; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-color); background: rgba(5, 8, 17, 0.75);">
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center; height: 70px;">
+      <a href="#" style="font-size: 1.25rem; font-weight: 800; color: var(--text-primary); text-decoration: none; letter-spacing: -0.02em; display: flex; align-items: center; gap: 0.5rem;">
+        <span style="color: var(--primary-cyan);">&lt;</span>Bhavesh.B<span style="color: var(--primary-cyan);">/&gt;</span>
+      </a>
+      
+      <nav style="display: flex; gap: 2rem;" class="nav-links">
+        <a href="#about" style="color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color var(--transition-fast);">About</a>
+        <a href="#publication" style="color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color var(--transition-fast);">Research</a>
+        <a href="#projects" style="color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color var(--transition-fast);">Projects</a>
+        <a href="#skills" style="color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color var(--transition-fast);">Skills</a>
+        <a href="#certifications" style="color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color var(--transition-fast);">Credentials</a>
+      </nav>
+      
+      <div style="display: flex; gap: 0.8rem;">
+        <a href="mailto:barmasheb@gmail.com" class="btn btn-primary" style="padding: 0.5rem 1.2rem; font-size: 0.85rem; border-radius: 6px;">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="about" class="hero">
+    <div class="hero-glow-1"></div>
+    <div class="hero-glow-2"></div>
+    
+    <div class="container">
+      <span class="hero-pre">AI / ML ENGINEER & RESEARCHER</span>
+      <h1 class="hero-title">Bhavesh Barmashe</h1>
+      <h3 class="hero-subtitle">
+        I specialize in <span id="typed-text"></span><span class="typing-cursor"></span>
+      </h3>
+      <p style="max-width: 680px; margin: 0 auto 2.5rem; color: var(--text-secondary); font-size: 1.05rem; line-height: 1.75;">
+        B.Tech Candidate in Artificial Intelligence & Machine Learning at SIRT Bhopal. Author of a peer-reviewed research publication in a <strong>Nature Portfolio Q1 Journal</strong>. Passionate about building robust multi-agent systems, privacy-preserving deep learning, and advanced retrieval architectures.
+      </p>
+      
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary">
+          <i class="fa-solid fa-code"></i> View Projects
+        </a>
+        <a href="https://github.com/Itsbhavesh1101" target="_blank" class="btn btn-secondary">
+          <i class="fa-brands fa-github"></i> GitHub
+        </a>
+        <a href="https://www.linkedin.com/in/bhavesh-barmashe/" target="_blank" class="btn btn-secondary">
+          <i class="fa-brands fa-linkedin"></i> LinkedIn
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Research Section -->
+  <section id="publication" class="featured-publication">
+    <div class="container">
+      <h2 class="section-title">Peer-Reviewed Research</h2>
+      
+      <div class="glass pub-card">
+        <div class="pub-badge-container">
+          <span class="pub-badge-title">Scopus Q1</span>
+          <span class="pub-badge-val">99.57%</span>
+          <span class="pub-badge-sub">Classification Accuracy</span>
+        </div>
+        
+        <div class="pub-details">
+          <div class="pub-journal">
+            <i class="fa-solid fa-square-poll-vertical" style="color: var(--accent-blue);"></i> Scientific Reports — <span>Nature Portfolio</span> (2026)
+          </div>
+          <h3>Federated MobileNetV2 with ensemble meta-learning for privacy-preserving brain tumor classification</h3>
+          <div class="pub-authors">
+            Authors: <strong>Bhavesh Barmashe</strong>, Ankitesh Tiwari
+          </div>
+          <p class="pub-desc">
+            This study introduces a privacy-preserving framework for identifying brain tumors from MRI scans without sharing sensitive patient data. It fine-tunes a MobileNetV2 model across multiple clients using FedAvg and FedProx to handle highly non-IID datasets. We train localized meta-learners (MLPs, SVMs, and Extreme Learning Machines) on client feature embeddings, achieving an elite 99.57% classification accuracy while significantly minimizing communication overhead.
+          </p>
+          
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+            <a href="https://doi.org/10.1038/s41598-026-55847-5" target="_blank" class="btn btn-primary" style="padding: 0.6rem 1.2rem; font-size: 0.85rem; background: linear-gradient(135deg, var(--accent-blue), #2563eb); box-shadow: 0 4px 14px var(--accent-blue-glow);">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> Read Nature Paper
+            </a>
+            <span class="btn btn-secondary" style="padding: 0.6rem 1.2rem; font-size: 0.85rem; cursor: default;">
+              DOI: 10.1038/s41598-026-55847-5
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <div class="container">
+      <h2 class="section-title">Flagship AI Systems</h2>
+      
+      <div class="projects-grid">
+        <!-- Project 1: SageSense (Patent Pending / Private) -->
+        <div class="glass glass-hover project-card" id="project-sagesense">
+          <div class="project-media-placeholder">
+            <i class="fa-solid fa-user-check project-media-icon"></i>
+          </div>
+          <div class="project-content">
+            <div class="project-tags">
+              <span class="project-tag">InsightFace</span>
+              <span class="project-tag">ONNX Liveness</span>
+              <span class="project-tag">FastAPI</span>
+              <span class="project-tag">WebRTC</span>
+            </div>
+            <h3 class="project-title" style="display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap;">
+              SageSense <span style="font-size: 0.7rem; padding: 0.2rem 0.5rem; border-radius: 4px; background: rgba(59, 130, 246, 0.15); color: var(--accent-blue); font-family: var(--font-mono); font-weight: 600; white-space: nowrap;">Patent Pending</span>
+            </h3>
+            <p class="project-desc">
+              A hybrid edge-cloud AI attendance platform. Automates presence logging using InsightFace facial recognition, ONNX anti-spoofing models (liveness detection), and dynamic entry/exit presence scoring via WebRTC video telemetry.
+            </p>
+            <div class="project-footer">
+              <button class="btn btn-secondary explore-btn" data-project="sagesense" style="padding: 0.5rem 1rem; font-size: 0.85rem;">
+                System Blueprint
+              </button>
+              <span class="project-link" style="color: var(--text-muted); cursor: not-allowed; display: inline-flex; align-items: center; gap: 0.4rem;" title="Private repository for patent filing">
+                Private Source <i class="fa-solid fa-lock" style="font-size: 0.85rem;"></i>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2: KrishiMitra -->
+        <div class="glass glass-hover project-card" id="project-krishimitra">
+          <div class="project-media-placeholder">
+            <i class="fa-solid fa-wheat-style project-media-icon"></i>
+          </div>
+          <div class="project-content">
+            <div class="project-tags">
+              <span class="project-tag">LangGraph</span>
+              <span class="project-tag">FastAPI</span>
+              <span class="project-tag">AWS Bedrock</span>
+              <span class="project-tag">React Native</span>
+            </div>
+            <h3 class="project-title">KrishiMitra</h3>
+            <p class="project-desc">
+              An AI-powered precision agriculture platform designed for Indian farmers. Features a multi-agent crop copilot orchestrating recommendations in Hindi, Google Earth Engine satellite NDVI crop analytics, and local PyTorch CNN leaf disease diagnostics.
+            </p>
+            <div class="project-footer">
+              <button class="btn btn-secondary explore-btn" data-project="krishimitra" style="padding: 0.5rem 1rem; font-size: 0.85rem;">
+                System Blueprint
+              </button>
+              <a href="https://github.com/Itsbhavesh1101/Krishi_Mitra" target="_blank" class="project-link">
+                GitHub <i class="fa-brands fa-github"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3: RakshakAI -->
+        <div class="glass glass-hover project-card" id="project-rakshakai">
+          <div class="project-media-placeholder">
+            <i class="fa-solid fa-shield-halved project-media-icon"></i>
+          </div>
+          <div class="project-content">
+            <div class="project-tags">
+              <span class="project-tag">FastAPI</span>
+              <span class="project-tag">OpenCV</span>
+              <span class="project-tag">YOLOv8</span>
+              <span class="project-tag">WebSockets</span>
+            </div>
+            <h3 class="project-title">Rakshak surveillance</h3>
+            <p class="project-desc">
+              Real-time threat monitoring surveillance system. Ingests video feeds, runs custom YOLOv8 threat models (weapons, fire/smoke, falls), tracks objects via ByteTrack, and utilizes local LMM scene enrichment (Ollama) to broadcast telemetry over WebSockets.
+            </p>
+            <div class="project-footer">
+              <button class="btn btn-secondary explore-btn" data-project="rakshakai" style="padding: 0.5rem 1rem; font-size: 0.85rem;">
+                System Blueprint
+              </button>
+              <a href="https://github.com/Itsbhavesh1101/RakshakAI" target="_blank" class="project-link">
+                GitHub <i class="fa-brands fa-github"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4: SAGE AI Career Navigator -->
+        <div class="glass glass-hover project-card" id="project-careernavigator">
+          <div class="project-media-placeholder">
+            <i class="fa-solid fa-graduation-cap project-media-icon"></i>
+          </div>
+          <div class="project-content">
+            <div class="project-tags">
+              <span class="project-tag">pgvector</span>
+              <span class="project-tag">RAG</span>
+              <span class="project-tag">FastAPI</span>
+              <span class="project-tag">AWS Bedrock</span>
+            </div>
+            <h3 class="project-title">SAGE AI Career OS</h3>
+            <p class="project-desc">
+              An institution-specific Career and Placement intelligence OS. Integrates pgvector-backed semantic RAG, background PDF/DOCX document ingestion for counseling, resume parsing intelligence, and predictive cohort placement fit metrics.
+            </p>
+            <div class="project-footer">
+              <button class="btn btn-secondary explore-btn" data-project="careernavigator" style="padding: 0.5rem 1rem; font-size: 0.85rem;">
+                System Blueprint
+              </button>
+              <a href="https://github.com/Itsbhavesh1101/Career_Advisor" target="_blank" class="project-link">
+                GitHub <i class="fa-brands fa-github"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills / Tech Matrix Section -->
+  <section id="skills">
+    <div class="container">
+      <h2 class="section-title">Core Skills Matrix</h2>
+      
+      <div class="glass skills-container" style="padding: 2.5rem;">
+        <div class="skills-sidebar">
+          <button class="skill-category-btn active" data-category="aiml">AI & Deep Learning</button>
+          <button class="skill-category-btn" data-category="frameworks">Frameworks & Tools</button>
+          <button class="skill-category-btn" data-category="languages">Languages & DBs</button>
+          <button class="skill-category-btn" data-category="cloud">Cloud & Infrastructure</button>
+        </div>
+        
+        <div class="skills-grid-wrapper">
+          <div class="skills-grid" id="skills-grid-container">
+            <!-- Dynamic skills injected by JS -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications & Credentials -->
+  <section id="certifications">
+    <div class="container">
+      <h2 class="section-title">Professional Credentials</h2>
+      
+      <div class="certs-grid">
+        <!-- Cert 1: Microsoft Fabric -->
+        <div class="glass cert-card">
+          <i class="fa-solid fa-award cert-icon"></i>
+          <div class="cert-details">
+            <h4>Microsoft Certified: Fabric Analytics Engineer Associate</h4>
+            <div class="cert-issuer">Microsoft</div>
+            <div class="cert-date">Issued 2025</div>
+          </div>
+        </div>
+
+        <!-- Cert 2: Oracle OCI GenAI -->
+        <div class="glass cert-card">
+          <i class="fa-solid fa-award cert-icon"></i>
+          <div class="cert-details">
+            <h4>OCI Certified Generative AI Professional</h4>
+            <div class="cert-issuer">Oracle</div>
+            <div class="cert-date">Issued 2026</div>
+          </div>
+        </div>
+
+        <!-- Cert 3: Oracle OCI Data Science -->
+        <div class="glass cert-card">
+          <i class="fa-solid fa-award cert-icon"></i>
+          <div class="cert-details">
+            <h4>OCI Certified Data Science Professional</h4>
+            <div class="cert-issuer">Oracle</div>
+            <div class="cert-date">Issued 2026</div>
+          </div>
+        </div>
+
+        <!-- Cert 4: NPTEL Python -->
+        <div class="glass cert-card">
+          <i class="fa-solid fa-award cert-icon"></i>
+          <div class="cert-details">
+            <h4>Python for Data Science</h4>
+            <div class="cert-issuer">NPTEL / IIT Madras</div>
+            <div class="cert-date">Issued 2026</div>
+          </div>
+        </div>
+
+        <!-- Cert 5: NPTEL Deep Learning -->
+        <div class="glass cert-card">
+          <i class="fa-solid fa-award cert-icon"></i>
+          <div class="cert-details">
+            <h4>Deep Learning - IIT Ropar</h4>
+            <div class="cert-issuer">NPTEL</div>
+            <div class="cert-date">Issued April 2026</div>
+          </div>
+        </div>
+
+        <!-- Cert 6: Power BI -->
+        <div class="glass cert-card">
+          <i class="fa-solid fa-award cert-icon"></i>
+          <div class="cert-details">
+            <h4>Power BI: Unleashing Data Insights Course</h4>
+            <div class="cert-issuer">Infyni</div>
+            <div class="cert-date">Issued 2025</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education & Milestones -->
+  <section id="education" style="padding-bottom: 8rem;">
+    <div class="container">
+      <h2 class="section-title">Education & Milestones</h2>
+      
+      <div class="timeline">
+        <!-- Timeline Item 1 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-meta">
+            <span class="timeline-date">July 2023 - July 2027</span>
+            <span class="timeline-badge">B.Tech</span>
+          </div>
+          <div class="glass timeline-content">
+            <h4>Sagar Institute of Research and Technology (SIRT), Bhopal</h4>
+            <p style="color: var(--primary-cyan); font-weight: 600; margin-bottom: 0.4rem;">Artificial Intelligence & Machine Learning</p>
+            <p>Pursuing undergraduate degree with a consolidated CGPA of <strong>7.45</strong>.</p>
+            <ul>
+              <li>First Place - RAEMPS National Conference at SIRT Bhopal (April 2025).</li>
+              <li>Core member of institute AIML and research developer groups.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Timeline Item 2 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-meta">
+            <span class="timeline-date">April 2023</span>
+            <span class="timeline-badge">High School</span>
+          </div>
+          <div class="glass timeline-content">
+            <h4>Govt. Mahatma Gandhi Hr. Sec. School, Bhopal</h4>
+            <p style="color: var(--text-secondary); font-weight: 600; margin-bottom: 0.4rem;">12th | PCM | MPBSE Board</p>
+            <p>Completed major course in Physics, Chemistry, and Mathematics with a score of <strong>82.4%</strong>.</p>
+          </div>
+        </div>
+
+        <!-- Timeline Item 3 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-meta">
+            <span class="timeline-date">April 2021</span>
+            <span class="timeline-badge">Secondary School</span>
+          </div>
+          <div class="glass timeline-content">
+            <h4>KKC Public Hr. Sec. School, Bhopal</h4>
+            <p style="color: var(--text-secondary); font-weight: 600; margin-bottom: 0.4rem;">10th | MPBSE Board</p>
+            <p>Completed general metrics education with a score of <strong>73%</strong>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal Drawer Overlay for Deep-Dives -->
+  <div class="drawer-overlay" id="drawer-overlay">
+    <div class="drawer">
+      <div class="drawer-header">
+        <h3 id="drawer-title">Project Name</h3>
+        <button class="drawer-close-btn" id="drawer-close"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="drawer-body" id="drawer-content">
+        <!-- Content injected by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-content">
+      <div class="footer-socials">
+        <a href="https://github.com/Itsbhavesh1101" target="_blank" class="footer-social-link" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/bhavesh-barmashe/" target="_blank" class="footer-social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="mailto:barmasheb@gmail.com" class="footer-social-link" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+      <div class="footer-copyright">
+        &copy; 2026 Bhavesh Barmashe. Engineered with precision.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="index.js"></script>
+</body>
+</html>
