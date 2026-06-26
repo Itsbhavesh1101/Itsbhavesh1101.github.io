@@ -110,8 +110,32 @@
       <div class="projects-grid">
         <!-- Project 1: SageSense (Patent Pending / Private) -->
         <div class="glass glass-hover project-card" id="project-sagesense">
-          <div class="project-media-placeholder">
-            <i class="fa-solid fa-user-check project-media-icon"></i>
+          <div class="project-media project-logo sagesense-anim" style="background: linear-gradient(135deg, #050b14 0%, #101b2b 100%);">
+            <div class="biometric-grid"></div>
+            <div class="face-outline">
+              <svg viewBox="0 0 100 100" class="face-svg">
+                <path d="M 50 18 C 35 18 28 30 28 50 C 28 70 36 82 50 82 C 64 82 72 70 72 50 C 72 30 65 18 50 18 Z" fill="none" stroke="rgba(6, 182, 212, 0.25)" stroke-width="1" stroke-dasharray="3 3" />
+                <path d="M 50 22 C 38 22 32 32 32 50 C 32 68 38 78 50 78 C 62 78 68 68 68 50 C 68 32 62 22 50 22 Z" fill="none" stroke="rgba(6, 182, 212, 0.4)" stroke-width="1.5" class="scanned-outline" />
+                <path d="M 38 46 Q 42 43 46 46" fill="none" stroke="var(--primary-cyan)" stroke-width="1.5" />
+                <path d="M 54 46 Q 58 43 62 46" fill="none" stroke="var(--primary-cyan)" stroke-width="1.5" />
+                <path d="M 50 49 L 50 61 L 46 63" fill="none" stroke="var(--primary-cyan)" stroke-width="1.5" />
+                <path d="M 42 70 Q 50 75 58 70" fill="none" stroke="var(--primary-cyan)" stroke-width="1.5" />
+              </svg>
+            </div>
+            <div class="scan-bar"></div>
+            <div class="landmarks">
+              <div class="landmark-dot eye-l" style="top: 45%; left: 42%;"></div>
+              <div class="landmark-dot eye-r" style="top: 45%; left: 58%;"></div>
+              <div class="landmark-dot nose" style="top: 55%; left: 50%;"></div>
+              <div class="landmark-dot mouth-l" style="top: 70%; left: 42%;"></div>
+              <div class="landmark-dot mouth-r" style="top: 70%; left: 58%;"></div>
+              <div class="landmark-dot chin" style="top: 79%; left: 50%;"></div>
+            </div>
+            <div class="telemetry-box">
+              <div class="telemetry-text text-scan">SYS: SCANNING</div>
+              <div class="telemetry-text text-match">ACC: 99.57%</div>
+              <div class="telemetry-text text-live">LIVE: ACTIVE</div>
+            </div>
           </div>
           <div class="project-content">
             <div class="project-tags">
@@ -139,8 +163,32 @@
 
         <!-- Project 2: KrishiMitra -->
         <div class="glass glass-hover project-card" id="project-krishimitra">
-          <div class="project-media-placeholder">
-            <i class="fa-solid fa-wheat-style project-media-icon"></i>
+          <div class="project-media project-logo krishimitra-anim" style="background: linear-gradient(135deg, #030d08 0%, #0c2014 100%);">
+            <div class="crop-grid"></div>
+            <div class="satellite-dish">
+              <svg viewBox="0 0 100 100" class="sat-svg">
+                <circle cx="50" cy="50" r="42" fill="none" stroke="rgba(16,185,129,0.1)" stroke-width="1" />
+                <circle cx="50" cy="50" r="28" fill="none" stroke="rgba(16,185,129,0.18)" stroke-width="1" stroke-dasharray="3 3" />
+                <circle cx="50" cy="50" r="14" fill="none" stroke="rgba(16,185,129,0.3)" stroke-width="1" />
+                <line x1="50" y1="50" x2="92" y2="50" stroke="rgba(16, 185, 129, 0.6)" stroke-width="1.5" class="radar-hand" />
+              </svg>
+            </div>
+            <div class="plant-container">
+              <svg viewBox="0 0 100 100" class="plant-svg">
+                <path d="M 50 90 L 50 35" fill="none" stroke="var(--accent-emerald)" stroke-width="2.5" class="plant-stem" />
+                <path d="M 50 72 Q 32 60 28 65" fill="none" stroke="var(--accent-emerald)" stroke-width="1.8" class="plant-branch-l" />
+                <path d="M 50 58 Q 68 46 72 51" fill="none" stroke="var(--accent-emerald)" stroke-width="1.8" class="plant-branch-r" />
+                <path d="M 50 48 Q 36 34 32 39" fill="none" stroke="var(--accent-emerald)" stroke-width="1.8" class="plant-branch-l2" />
+                <circle cx="28" cy="65" r="4.5" fill="#10b981" class="plant-node" />
+                <circle cx="72" cy="51" r="4.5" fill="#10b981" class="plant-node" />
+                <circle cx="32" cy="39" r="4" fill="#34d399" class="plant-node" />
+                <circle cx="50" cy="35" r="6" fill="#6ee7b7" class="plant-node-top" />
+              </svg>
+            </div>
+            <div class="stats-panel">
+              <div class="stat-row"><span class="stat-label">NDVI</span><span class="stat-val">0.82</span></div>
+              <div class="stat-row"><span class="stat-label">SOIL</span><span class="stat-val">65%</span></div>
+            </div>
           </div>
           <div class="project-content">
             <div class="project-tags">
@@ -166,8 +214,32 @@
 
         <!-- Project 3: RakshakAI -->
         <div class="glass glass-hover project-card" id="project-rakshakai">
-          <div class="project-media-placeholder">
-            <i class="fa-solid fa-shield-halved project-media-icon"></i>
+          <div class="project-media project-logo rakshakai-anim" style="background: linear-gradient(135deg, #0f0404 0%, #200808 100%);">
+            <div class="camera-feed-container">
+              <div class="grid-overlay"></div>
+              <div class="static-distortion"></div>
+              <div class="viewfinder-corners">
+                <div class="corner tl"></div>
+                <div class="corner tr"></div>
+                <div class="corner bl"></div>
+                <div class="corner br"></div>
+              </div>
+              <div class="rec-indicator">
+                <span class="dot"></span>
+                <span class="text">REC</span>
+              </div>
+              <div class="camera-tag">CAM_SURV_04</div>
+              
+              <div class="target-box">
+                <div class="target-corner tl"></div>
+                <div class="target-corner tr"></div>
+                <div class="target-corner bl"></div>
+                <div class="target-corner br"></div>
+                <div class="target-label">WEAPON DETECTED 94.3%</div>
+              </div>
+              
+              <div class="radar-line"></div>
+            </div>
           </div>
           <div class="project-content">
             <div class="project-tags">
@@ -193,8 +265,39 @@
 
         <!-- Project 4: SAGE AI Career Navigator -->
         <div class="glass glass-hover project-card" id="project-careernavigator">
-          <div class="project-media-placeholder">
-            <i class="fa-solid fa-graduation-cap project-media-icon"></i>
+          <div class="project-media project-logo careernavigator-anim" style="background: linear-gradient(135deg, #090514 0%, #150d26 100%);">
+            <div class="rag-network">
+              <div class="doc-node">
+                <svg viewBox="0 0 50 60" class="doc-svg">
+                  <rect x="2" y="2" width="46" height="56" rx="4" fill="none" stroke="var(--accent-blue)" stroke-width="2" />
+                  <line x1="8" y1="14" x2="42" y2="14" stroke="#8b5cf6" stroke-width="2" class="doc-line doc-l1" />
+                  <line x1="8" y1="24" x2="34" y2="24" stroke="#8b5cf6" stroke-width="2" class="doc-line doc-l2" />
+                  <line x1="8" y1="34" x2="42" y2="34" stroke="#8b5cf6" stroke-width="2" class="doc-line doc-l3" />
+                  <line x1="8" y1="44" x2="26" y2="44" stroke="#8b5cf6" stroke-width="2" class="doc-line doc-l4" />
+                </svg>
+                <div class="doc-label">RESUME_RAW.PDF</div>
+              </div>
+              
+              <div class="data-stream">
+                <svg class="stream-svg" viewBox="0 0 100 100">
+                  <path d="M 28 50 C 40 30, 60 30, 72 50" fill="none" stroke="rgba(139, 92, 246, 0.15)" stroke-width="1.5" stroke-dasharray="3 3" />
+                  <path d="M 28 50 C 40 70, 60 70, 72 50" fill="none" stroke="rgba(6, 182, 212, 0.15)" stroke-width="1.5" stroke-dasharray="3 3" />
+                  <path d="M 28 50 L 72 50" fill="none" stroke="rgba(139, 92, 246, 0.2)" stroke-width="1.5" />
+                </svg>
+                <div class="data-packet p1"></div>
+                <div class="data-packet p2"></div>
+                <div class="data-packet p3"></div>
+              </div>
+              
+              <div class="vector-db">
+                <div class="db-cylinder">
+                  <div class="db-ring r1"></div>
+                  <div class="db-ring r2"></div>
+                  <div class="db-ring r3"></div>
+                </div>
+                <div class="db-label">PG_VECTOR</div>
+              </div>
+            </div>
           </div>
           <div class="project-content">
             <div class="project-tags">
@@ -385,6 +488,14 @@
       <div class="drawer-body" id="drawer-content">
         <!-- Content injected by JS -->
       </div>
+    </div>
+  </div>
+
+  <!-- Lightbox for Image Preview -->
+  <div class="lightbox-overlay" id="lightbox-overlay">
+    <div class="lightbox-content">
+      <img id="lightbox-img" src="" alt="Full Screen Preview">
+      <button class="lightbox-close-btn" id="lightbox-close"><i class="fa-solid fa-xmark"></i></button>
     </div>
   </div>
 

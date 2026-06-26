@@ -68,7 +68,17 @@ const blueprints = {
       <li><strong>Temporal Attendance Score:</strong> Tracks exact presence duration (Time Present / Total Session Time) instead of single-point check-ins to record actual classroom time.</li>
       <li><strong>Biometric Privacy & Encryption:</strong> No raw facial images are stored on the database; face templates are generated locally and stored as AES-encrypted embeddings.</li>
       <li><strong>Insight Copilot:</strong> Combines LLMs and structured RAG to let administrators generate automated, explainable class risk reports and alert indices.</li>
-    `
+    `,
+    screenshots: [
+      { url: "./images/sagesense_dashboard.png", label: "Admin Operations Dashboard" },
+      { url: "./images/sagesense_live_monitor.png", label: "Real-time Presence Monitor" },
+      { url: "./images/sagesense_automation.png", label: "Automation Hub & Cameras" },
+      { url: "./images/sagesense_analytics.png", label: "Performance & Risk Analytics" },
+      { url: "./images/sagesense_enrollment.png", label: "Student Enrollment Console" },
+      { url: "./images/sagesense_faculty.png", label: "Faculty Management" },
+      { url: "./images/sagesense_intake.png", label: "Biometric Ingestion Portal" },
+      { url: "./images/sagesense_login.png", label: "Secure Gateway Login" }
+    ]
   },
   krishimitra: {
     title: "KrishiMitra Architecture",
@@ -102,7 +112,16 @@ const blueprints = {
       <li><strong>CNN Image Ingestion:</strong> Crop disease recognition triggers a local PyTorch inference endpoint running fine-tuned MobileNetV2 weights (95%+ accuracy).</li>
       <li><strong>Satellite Analytics:</strong> GEE integration queries spectral band data to return live NDVI ratings mapping historical soil moisture constraints.</li>
       <li><strong>Production Infrastructure:</strong> Designed to run in a Docker Compose container cluster proxied by Caddy with scheduled PostgreSQL backups to AWS S3.</li>
-    `
+    `,
+    screenshots: [
+      { url: "./images/krishimitra_dashboard.png", label: "AI Operations Command Center" },
+      { url: "./images/krishimitra_ndvi.png", label: "NDVI Spectral Analytics" },
+      { url: "./images/krishimitra_crops.png", label: "Crop Ingestion Console" },
+      { url: "./images/krishimitra_farmers.png", label: "Farmer Registration DB" },
+      { url: "./images/krishimitra_soil.png", label: "Soil Health Matrix" },
+      { url: "./images/krishimitra_marketplace.png", label: "Localized Price Indexer" },
+      { url: "./images/krishimitra_login.png", label: "Admin Access Console" }
+    ]
   },
   rakshakai: {
     title: "Rakshak Surveillance Architecture",
@@ -135,7 +154,13 @@ const blueprints = {
       <li><strong>Intelligent Polygon Masking:</strong> Admin dashboards allow security personnel to draw custom exclusion zones, using ray-casting algorithms to compute dynamic polygon intersections.</li>
       <li><strong>Local Scene Decoupling:</strong> Integrates Ollama (local Llama3-Vision) to run descriptive descriptions on flagged frames offline, preventing public data leakage.</li>
       <li><strong>Deduplication Logic:</strong> Redis buffers alert sequences to prevent alarm fatigue by tracking target persistence vectors temporally.</li>
-    `
+    `,
+    screenshots: [
+      { url: "./images/rakshak_dashboard.png", label: "Surveillance Feed Control" },
+      { url: "./images/rakshak_analytics.png", label: "Threat Analytics Ledger" },
+      { url: "./images/rakshak_detection.png", label: "Inference Object History" },
+      { url: "./images/rakshak_alerts.png", label: "Dispatched Emergency Alerts" }
+    ]
   },
   careernavigator: {
     title: "SAGE AI Career OS Architecture",
@@ -168,7 +193,15 @@ const blueprints = {
       <li><strong>Cognitive Resume Parsing:</strong> Employs structured LLM outputs to index candidate profiles, scoring readiness metrics deterministically.</li>
       <li><strong>Admission Intelligence:</strong> Leverages XIIth student metrics to construct risk assessments regarding wrong-branch alignment.</li>
       <li><strong>Database Governance:</strong> Normalized 3NF structure enforcing triggers and index backfills via transactional background operations.</li>
-    `
+    `,
+    screenshots: [
+      { url: "./images/career_project/Screenshot 2026-05-28 110441.png", label: "Platform Capabilities Overview" },
+      { url: "./images/career_project/Screenshot 2026-05-28 110458.png", label: "Multi-Agent Copilot Workflows" },
+      { url: "./images/career_project/Screenshot 2026-05-28 110734.png", label: "Institution Command Center (Admin Dashboard)" },
+      { url: "./images/career_project/Screenshot 2026-05-28 111055.png", label: "Career Analysis & Recommendations" },
+      { url: "./images/career_project/Screenshot 2026-05-28 111105.png", label: "Resume Analysis Workspace" },
+      { url: "./images/career_project/Screenshot 2026-05-28 111125.png", label: "Internship Readiness Dashboard" }
+    ]
   }
 };
 
@@ -248,6 +281,11 @@ const drawerClose = document.getElementById("drawer-close");
 const drawerTitle = document.getElementById("drawer-title");
 const drawerContent = document.getElementById("drawer-content");
 
+// Lightbox Elements
+const lightboxOverlay = document.getElementById("lightbox-overlay");
+const lightboxImg = document.getElementById("lightbox-img");
+const lightboxClose = document.getElementById("lightbox-close");
+
 function openDrawer(projectId) {
   const bp = blueprints[projectId];
   if (!bp) return;
@@ -271,6 +309,17 @@ function openDrawer(projectId) {
         ${bp.details}
       </ul>
     </div>
+
+    <div>
+      <h4 class="drawer-section-title">System Interface Showcase</h4>
+      <div class="drawer-showcase-grid">
+        ${bp.screenshots.map(s => `
+          <div class="drawer-showcase-item" style="background-image: url('${s.url}');" onclick="openLightbox('${s.url}')">
+            <div class="drawer-showcase-label">${s.label}</div>
+          </div>
+        `).join('')}
+      </div>
+    </div>
   `;
   
   drawerOverlay.classList.add("active");
@@ -292,6 +341,25 @@ drawerClose.addEventListener("click", closeDrawer);
 drawerOverlay.addEventListener("click", (e) => {
   if (e.target === drawerOverlay) {
     closeDrawer();
+  }
+});
+
+// Lightbox Functions
+function openLightbox(url) {
+  lightboxImg.src = url;
+  lightboxOverlay.classList.add("active");
+}
+
+function closeLightbox() {
+  lightboxOverlay.classList.remove("active");
+  // Clean up source when closed to prevent flashing old image on next open
+  setTimeout(() => lightboxImg.src = "", 300);
+}
+
+lightboxClose.addEventListener("click", closeLightbox);
+lightboxOverlay.addEventListener("click", (e) => {
+  if (e.target === lightboxOverlay) {
+    closeLightbox();
   }
 });
 

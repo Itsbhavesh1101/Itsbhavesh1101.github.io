@@ -350,8 +350,8 @@ section {
 /* Projects Section */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
 }
 
 .project-card {
@@ -404,6 +404,616 @@ section {
 .project-card:hover .project-media-icon {
   transform: scale(1.1);
   opacity: 1;
+}
+
+/* Custom Interactive Micro-Animations */
+
+/* Common base styles for animated card media */
+.project-logo {
+  height: 200px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* 1. SageSense Animation (AI Face Attendance) */
+.sagesense-anim {
+  position: relative;
+}
+
+.sagesense-anim .biometric-grid {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(6, 182, 212, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(6, 182, 212, 0.03) 1px, transparent 1px);
+  background-size: 15px 15px;
+  background-position: center;
+  opacity: 0.7;
+}
+
+.sagesense-anim .face-outline {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sagesense-anim .face-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.sagesense-anim .scanned-outline {
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+  animation: strokeScan 6s linear infinite;
+}
+
+.sagesense-anim .scan-bar {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--primary-cyan), transparent);
+  box-shadow: 0 0 10px var(--primary-cyan), 0 0 4px var(--primary-cyan);
+  z-index: 3;
+  animation: moveBar 3s ease-in-out infinite;
+}
+
+.sagesense-anim .landmarks {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+}
+
+.sagesense-anim .landmark-dot {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background-color: #22d3ee;
+  border-radius: 50%;
+  box-shadow: 0 0 6px #22d3ee;
+  transform: translate(-50%, -50%);
+  animation: dotPulse 1.5s ease-in-out infinite;
+}
+
+.sagesense-anim .landmark-dot.eye-l { animation-delay: 0.1s; }
+.sagesense-anim .landmark-dot.eye-r { animation-delay: 0.2s; }
+.sagesense-anim .landmark-dot.nose { animation-delay: 0.4s; }
+.sagesense-anim .landmark-dot.mouth-l { animation-delay: 0.5s; }
+.sagesense-anim .landmark-dot.mouth-r { animation-delay: 0.6s; }
+.sagesense-anim .landmark-dot.chin { animation-delay: 0.8s; }
+
+.sagesense-anim .telemetry-box {
+  position: absolute;
+  bottom: 8px;
+  left: 10px;
+  right: 10px;
+  background: rgba(5, 8, 17, 0.85);
+  border: 1px solid rgba(6, 182, 212, 0.2);
+  border-radius: 4px;
+  padding: 4px 8px;
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  color: var(--text-secondary);
+  z-index: 4;
+}
+
+.sagesense-anim .telemetry-text {
+  letter-spacing: 0.5px;
+}
+
+.sagesense-anim .text-scan {
+  color: var(--primary-cyan);
+  animation: textBlink 1.5s infinite;
+}
+
+.sagesense-anim .text-match {
+  color: #fff;
+}
+
+.sagesense-anim .text-live {
+  color: var(--accent-emerald);
+}
+
+
+/* 2. KrishiMitra Animation (AI Precision Agriculture) */
+.krishimitra-anim {
+  position: relative;
+}
+
+.krishimitra-anim .crop-grid {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(16, 185, 129, 0.05) 0%, transparent 70%);
+}
+
+.krishimitra-anim .satellite-dish {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  z-index: 1;
+}
+
+.krishimitra-anim .sat-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.krishimitra-anim .radar-hand {
+  transform-origin: 50px 50px;
+  animation: radarRotate 4s linear infinite;
+}
+
+.krishimitra-anim .plant-container {
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  z-index: 2;
+}
+
+.krishimitra-anim .plant-svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 0 6px rgba(16, 185, 129, 0.4));
+}
+
+.krishimitra-anim .plant-stem {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: drawPlant 4s ease-out infinite;
+}
+
+.krishimitra-anim .plant-branch-l,
+.krishimitra-anim .plant-branch-r,
+.krishimitra-anim .plant-branch-l2 {
+  stroke-dasharray: 50;
+  stroke-dashoffset: 50;
+  animation: drawPlantBranch 4s ease-out infinite;
+}
+
+.krishimitra-anim .plant-branch-l { animation-delay: 0.5s; }
+.krishimitra-anim .plant-branch-r { animation-delay: 0.8s; }
+.krishimitra-anim .plant-branch-l2 { animation-delay: 1.2s; }
+
+.krishimitra-anim .plant-node {
+  transform: scale(0);
+  transform-origin: center;
+  animation: growNode 4s ease-out infinite;
+}
+.krishimitra-anim .plant-svg .plant-node:nth-of-type(1) { animation-delay: 0.7s; transform-origin: 28px 65px; }
+.krishimitra-anim .plant-svg .plant-node:nth-of-type(2) { animation-delay: 1s; transform-origin: 72px 51px; }
+.krishimitra-anim .plant-svg .plant-node:nth-of-type(3) { animation-delay: 1.4s; transform-origin: 32px 39px; }
+
+.krishimitra-anim .plant-node-top {
+  transform: scale(0);
+  transform-origin: 50px 35px;
+  animation: growNode 4s ease-out infinite;
+  animation-delay: 1.8s;
+}
+
+.krishimitra-anim .stats-panel {
+  position: absolute;
+  bottom: 8px;
+  right: 10px;
+  background: rgba(5, 8, 17, 0.85);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  border-radius: 4px;
+  padding: 4px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  z-index: 4;
+}
+
+.krishimitra-anim .stat-row {
+  display: flex;
+  gap: 8px;
+  justify-content: space-between;
+}
+
+.krishimitra-anim .stat-label {
+  color: var(--text-muted);
+}
+
+.krishimitra-anim .stat-val {
+  color: var(--accent-emerald);
+  font-weight: 600;
+}
+
+
+/* 3. Rakshak Surveillance Animation (YOLO Surveillance) */
+.rakshakai-anim {
+  position: relative;
+}
+
+.rakshakai-anim .camera-feed-container {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.rakshakai-anim .grid-overlay {
+  position: absolute;
+  inset: 0;
+  background: 
+    linear-gradient(rgba(239, 68, 68, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(239, 68, 68, 0.02) 1px, transparent 1px);
+  background-size: 20px 20px;
+  background-position: center;
+  z-index: 1;
+}
+
+.rakshakai-anim .static-distortion {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  background-size: 100% 4px, 6px 100%;
+  opacity: 0.4;
+  z-index: 2;
+  animation: feedFlicker 0.15s infinite;
+  pointer-events: none;
+}
+
+.rakshakai-anim .viewfinder-corners {
+  position: absolute;
+  inset: 15px;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.rakshakai-anim .corner {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.rakshakai-anim .corner.tl { top: 0; left: 0; border-right: none; border-bottom: none; }
+.rakshakai-anim .corner.tr { top: 0; right: 0; border-left: none; border-bottom: none; }
+.rakshakai-anim .corner.bl { bottom: 0; left: 0; border-right: none; border-top: none; }
+.rakshakai-anim .corner.br { bottom: 0; right: 0; border-left: none; border-top: none; }
+
+.rakshakai-anim .rec-indicator {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  z-index: 3;
+}
+
+.rakshakai-anim .rec-indicator .dot {
+  width: 6px;
+  height: 6px;
+  background-color: #ef4444;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #ef4444;
+  animation: recBlink 1s step-start infinite;
+}
+
+.rakshakai-anim .rec-indicator .text {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+
+.rakshakai-anim .camera-tag {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  color: rgba(255, 255, 255, 0.4);
+  z-index: 3;
+}
+
+.rakshakai-anim .target-box {
+  position: absolute;
+  width: 100px;
+  height: 60px;
+  border: 1px dashed #f97316;
+  background: rgba(249, 115, 22, 0.05);
+  box-shadow: inset 0 0 10px rgba(249, 115, 22, 0.1);
+  z-index: 3;
+  animation: trackObject 6s ease-in-out infinite;
+}
+
+.rakshakai-anim .target-corner {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border: 1.5px solid #f97316;
+}
+
+.rakshakai-anim .target-corner.tl { top: -1px; left: -1px; border-right: none; border-bottom: none; }
+.rakshakai-anim .target-corner.tr { top: -1px; right: -1px; border-left: none; border-bottom: none; }
+.rakshakai-anim .target-corner.bl { bottom: -1px; left: -1px; border-right: none; border-top: none; }
+.rakshakai-anim .target-corner.br { bottom: -1px; right: -1px; border-left: none; border-top: none; }
+
+.rakshakai-anim .target-label {
+  position: absolute;
+  top: -15px;
+  left: 0;
+  background: #f97316;
+  color: #000;
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  font-weight: 700;
+  padding: 1px 4px;
+  border-radius: 2px;
+  white-space: nowrap;
+}
+
+.rakshakai-anim .radar-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(239, 68, 68, 0.08) 0%, transparent 10%);
+  animation: radarSweep 2.5s linear infinite;
+  z-index: 2;
+  pointer-events: none;
+}
+
+
+/* 4. SAGE AI Career OS Animation (Neural RAG Routing) */
+.careernavigator-anim {
+  position: relative;
+}
+
+.careernavigator-anim .rag-network {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 15px;
+}
+
+.careernavigator-anim .doc-node {
+  position: relative;
+  width: 42px;
+  height: 52px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 3;
+}
+
+.careernavigator-anim .doc-svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 0 4px rgba(139, 92, 246, 0.3));
+}
+
+.careernavigator-anim .doc-line {
+  stroke-dasharray: 40;
+  animation: lineFlow 3s linear infinite;
+}
+
+.careernavigator-anim .doc-l1 { animation-delay: 0s; }
+.careernavigator-anim .doc-l2 { animation-delay: 0.3s; }
+.careernavigator-anim .doc-l3 { animation-delay: 0.6s; }
+.careernavigator-anim .doc-l4 { animation-delay: 0.9s; }
+
+.careernavigator-anim .doc-label,
+.careernavigator-anim .db-label {
+  position: absolute;
+  bottom: -15px;
+  font-family: var(--font-mono);
+  font-size: 0.45rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+  letter-spacing: 0.2px;
+}
+
+.careernavigator-anim .data-stream {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+
+.careernavigator-anim .stream-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.careernavigator-anim .data-packet {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: var(--primary-cyan);
+  box-shadow: 0 0 6px var(--primary-cyan);
+  transform: translate(-50%, -50%);
+}
+
+.careernavigator-anim .data-packet.p1 {
+  animation: packetFlow1 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.careernavigator-anim .data-packet.p2 {
+  animation: packetFlow2 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  animation-delay: 0.6s;
+  background-color: #c084fc;
+  box-shadow: 0 0 6px #c084fc;
+}
+
+.careernavigator-anim .data-packet.p3 {
+  animation: packetFlow3 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  animation-delay: 1.2s;
+  background-color: #8b5cf6;
+  box-shadow: 0 0 6px #8b5cf6;
+}
+
+.careernavigator-anim .vector-db {
+  position: relative;
+  width: 40px;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 3;
+}
+
+.careernavigator-anim .db-cylinder {
+  width: 32px;
+  height: 40px;
+  position: relative;
+  border: 1.5px solid var(--primary-cyan);
+  border-radius: 4px / 8px;
+  background: rgba(6, 182, 212, 0.05);
+  box-shadow: 0 0 10px rgba(6, 182, 212, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 4px 0;
+}
+
+.careernavigator-anim .db-ring {
+  width: 100%;
+  height: 2px;
+  background-color: rgba(6, 182, 212, 0.4);
+  box-shadow: 0 0 4px var(--primary-cyan);
+}
+
+.careernavigator-anim .db-ring.r1 { animation: ringSpin 2s linear infinite; }
+.careernavigator-anim .db-ring.r2 { animation: ringSpin 2s linear infinite reverse; }
+.careernavigator-anim .db-ring.r3 { animation: ringSpin 2.5s linear infinite; }
+
+
+/* Custom Animations Keyframes */
+@keyframes strokeScan {
+  0% { stroke-dashoffset: 200; }
+  50% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: -200; }
+}
+
+@keyframes moveBar {
+  0%, 100% { top: 10%; }
+  50% { top: 85%; }
+}
+
+@keyframes dotPulse {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; box-shadow: 0 0 4px #22d3ee; }
+  50% { transform: translate(-50%, -50%) scale(1.6); opacity: 1; box-shadow: 0 0 10px #22d3ee; }
+}
+
+@keyframes textBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+@keyframes radarRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes drawPlant {
+  0% { stroke-dashoffset: 100; }
+  40%, 100% { stroke-dashoffset: 0; }
+}
+
+@keyframes drawPlantBranch {
+  0%, 15% { stroke-dashoffset: 50; }
+  45%, 100% { stroke-dashoffset: 0; }
+}
+
+@keyframes growNode {
+  0%, 35% { transform: scale(0); opacity: 0; }
+  55%, 100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes feedFlicker {
+  0%, 100% { transform: scaleY(1) scaleX(1); }
+  50% { transform: scaleY(1.01) scaleX(0.99); filter: brightness(1.05); }
+}
+
+@keyframes recBlink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+@keyframes trackObject {
+  0%, 100% { top: 35%; left: 35%; }
+  25% { top: 25%; left: 45%; }
+  50% { top: 40%; left: 55%; }
+  75% { top: 30%; left: 25%; }
+}
+
+@keyframes radarSweep {
+  0% { top: -10%; }
+  100% { top: 100%; }
+}
+
+@keyframes lineFlow {
+  0% { stroke-dashoffset: 40; opacity: 0.3; }
+  50% { stroke-dashoffset: 0; opacity: 1; }
+  100% { stroke-dashoffset: -40; opacity: 0.3; }
+}
+
+@keyframes ringSpin {
+  0% { opacity: 0.4; }
+  50% { opacity: 1; transform: scaleX(1.05); }
+  100% { opacity: 0.4; }
+}
+
+@keyframes packetFlow1 {
+  0% { top: 50%; left: 20%; opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { top: 40%; left: 80%; opacity: 0; }
+}
+
+@keyframes packetFlow2 {
+  0% { top: 50%; left: 20%; opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { top: 50%; left: 80%; opacity: 0; }
+}
+
+@keyframes packetFlow3 {
+  0% { top: 50%; left: 20%; opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { top: 60%; left: 80%; opacity: 0; }
+}
+
+/* Speed up animations on card hover */
+.project-card:hover .sagesense-anim .scan-bar {
+  animation-duration: 1.5s;
+}
+
+.project-card:hover .krishimitra-anim .radar-hand {
+  animation-duration: 2s;
+}
+
+.project-card:hover .rakshakai-anim .radar-line {
+  animation-duration: 1.25s;
+}
+
+.project-card:hover .careernavigator-anim .data-packet {
+  animation-duration: 1s;
 }
 
 .project-content {
@@ -846,8 +1456,214 @@ footer {
   50% { opacity: 0; }
 }
 
+/* Drawer Screenshot Showcase */
+.drawer-showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+.drawer-showcase-item {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  aspect-ratio: 16/9;
+  cursor: pointer;
+  background-size: cover;
+  background-position: center;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-normal), border-color var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.drawer-showcase-item:hover {
+  transform: translateY(-2px);
+  border-color: var(--primary-cyan);
+  box-shadow: 0 8px 24px rgba(6, 182, 212, 0.25);
+}
+
+.drawer-showcase-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(0deg, rgba(5, 8, 17, 0.95) 0%, rgba(5, 8, 17, 0.6) 60%, transparent 100%);
+  padding: 0.6rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+/* Lightbox System */
+.lightbox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(3, 5, 10, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  z-index: 2000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-normal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.lightbox-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 100%;
+  max-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-content img {
+  max-width: 90vw;
+  max-height: 85vh;
+  border-radius: 16px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+  object-fit: contain;
+}
+
+.lightbox-close-btn {
+  position: absolute;
+  top: -3rem;
+  right: 0;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+}
+
+.lightbox-close-btn:hover {
+  color: #000;
+  background: var(--primary-cyan);
+  border-color: var(--primary-cyan);
+  transform: scale(1.05);
+}
+
+/* Card Theme Overrides for Project Consistency */
+
+/* 1. SageSense (Cyan Theme) */
+#project-sagesense.glass-hover:hover {
+  border-color: rgba(6, 182, 212, 0.4);
+  box-shadow: 0 12px 40px rgba(6, 182, 212, 0.15);
+}
+#project-sagesense .project-tag {
+  background: rgba(6, 182, 212, 0.08);
+  color: var(--primary-cyan);
+  border: 1px solid rgba(6, 182, 212, 0.15);
+}
+#project-sagesense .project-link {
+  color: var(--primary-cyan);
+}
+#project-sagesense .project-link:hover {
+  color: var(--text-primary);
+}
+#project-sagesense .explore-btn:hover {
+  background: rgba(6, 182, 212, 0.15);
+  border-color: var(--primary-cyan);
+  color: #fff;
+}
+
+/* 2. KrishiMitra (Emerald Green Theme) */
+#project-krishimitra.glass-hover:hover {
+  border-color: rgba(16, 185, 129, 0.4);
+  box-shadow: 0 12px 40px rgba(16, 185, 129, 0.15);
+}
+#project-krishimitra .project-tag {
+  background: rgba(16, 185, 129, 0.08);
+  color: var(--accent-emerald);
+  border: 1px solid rgba(16, 185, 129, 0.15);
+}
+#project-krishimitra .project-link {
+  color: var(--accent-emerald);
+}
+#project-krishimitra .project-link:hover {
+  color: var(--text-primary);
+}
+#project-krishimitra .explore-btn:hover {
+  background: rgba(16, 185, 129, 0.15);
+  border-color: var(--accent-emerald);
+  color: #fff;
+}
+
+/* 3. Rakshak Surveillance (Orange/Red Theme) */
+#project-rakshakai.glass-hover:hover {
+  border-color: rgba(249, 115, 22, 0.4);
+  box-shadow: 0 12px 40px rgba(249, 115, 22, 0.15);
+}
+#project-rakshakai .project-tag {
+  background: rgba(249, 115, 22, 0.08);
+  color: #f97316;
+  border: 1px solid rgba(249, 115, 22, 0.15);
+}
+#project-rakshakai .project-link {
+  color: #f97316;
+}
+#project-rakshakai .project-link:hover {
+  color: var(--text-primary);
+}
+#project-rakshakai .explore-btn:hover {
+  background: rgba(249, 115, 22, 0.15);
+  border-color: #f97316;
+  color: #fff;
+}
+
+/* 4. SAGE AI Career OS (Purple/Indigo Theme) */
+#project-careernavigator.glass-hover:hover {
+  border-color: rgba(139, 92, 246, 0.4);
+  box-shadow: 0 12px 40px rgba(139, 92, 246, 0.15);
+}
+#project-careernavigator .project-tag {
+  background: rgba(139, 92, 246, 0.08);
+  color: #a78bfa;
+  border: 1px solid rgba(139, 92, 246, 0.15);
+}
+#project-careernavigator .project-link {
+  color: #a78bfa;
+}
+#project-careernavigator .project-link:hover {
+  color: var(--text-primary);
+}
+#project-careernavigator .explore-btn:hover {
+  background: rgba(139, 92, 246, 0.15);
+  border-color: #8b5cf6;
+  color: #fff;
+}
+
 /* Responsive Rules */
 @media (max-width: 992px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .drawer-showcase-grid {
+    grid-template-columns: 1fr;
+  }
   .skills-container {
     grid-template-columns: 1fr;
     gap: 2rem;
